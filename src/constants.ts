@@ -18,6 +18,7 @@ export interface EngagementData {
   displayMessage: string;
   groomHostsList: string[];
   brideHostsList: string[];
+  musicFile: string;
   labels: EngagementLabels;
 }
 
@@ -42,6 +43,7 @@ export const engagementDataEn: EngagementData = {
     "Gauravi Singh",
     "Anay Singh"
   ],
+  musicFile: "/bg-music.mp3",
   labels: {
     joinUs: "Join us in celebrating the auspicious engagement of",
     twoSouls: "Two souls, one destiny",
@@ -74,6 +76,7 @@ export const engagementDataHi: EngagementData = {
     "गौरवी सिंह",
     "आनय सिंह"
   ],
+  musicFile: "/bg-music.mp3",
   labels: {
     joinUs: "के पावन सगाई समारोह में",
     twoSouls: "दो आत्माओं का मंगल मिलन",

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { engagementDataEn, engagementDataHi, EngagementData } from './constants';
-import { ChevronRight, ChevronLeft, Pause, Play, Calendar, MapPin, Phone, Languages } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Pause, Play, Calendar, MapPin, Phone, Languages, Volume2, VolumeX } from 'lucide-react';
 import './index.css';
 
 // Generating decorative traditional sparkles
@@ -20,6 +20,8 @@ const App: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
   const [lang, setLang] = useState<Language>('hi'); // Default to Hindi
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
   
   const SLIDE_DURATION = 10000;
   const TOTAL_SLIDES = 3;
@@ -48,6 +50,18 @@ const App: React.FC = () => {
     };
   }, [isPlaying, currentSlide]);
 
+  // Attempt to play music on first user interaction anywhere on the screen
+  useEffect(() => {
+    const handleFirstInteraction = () => {
+      if (audioRef.current && !isMusicPlaying) {
+        audioRef.current.play().then(() => setIsMusicPlaying(true)).catch(e => console.log("Autoplay blocked"));
+      }
+      window.removeEventListener('click', handleFirstInteraction);
+    };
+    window.addEventListener('click', handleFirstInteraction);
+    return () => window.removeEventListener('click', handleFirstInteraction);
+  }, []);
+
   const handleNextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % TOTAL_SLIDES);
     setProgress(0);
@@ -66,12 +80,25 @@ const App: React.FC = () => {
     setLang((prev) => (prev === 'hi' ? 'en' : 'hi'));
   };
 
+  const toggleMusic = () => {
+    if (audioRef.current) {
+      if (isMusicPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsMusicPlaying(!isMusicPlaying);
+    }
+  };
+
   const fontMainClass = lang === 'hi' ? 'font-hi-main' : 'font-en-main';
   const fontTitleClass = lang === 'hi' ? 'font-hi-title' : 'font-en-title';
   const fontDisplayClass = lang === 'hi' ? 'font-hi-display' : 'font-en-display';
 
   return (
     <div className={`app-container ${fontMainClass}`}>
+      <audio ref={audioRef} src={data.musicFile} loop />
+      
       {/* Background Layer */}
       <div className="background-wrapper">
         <img 
@@ -95,6 +122,11 @@ const App: React.FC = () => {
           ))}
         </div>
       </div>
+
+      {/* Music Toggle */}
+      <button className="music-toggle" onClick={toggleMusic} aria-label="Toggle Music">
+        {isMusicPlaying ? <Volume2 size={24} /> : <VolumeX size={24} />}
+      </button>
 
       {/* Language Toggle */}
       <button className="lang-toggle" onClick={toggleLang} aria-label="Toggle Language">

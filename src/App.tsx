@@ -22,7 +22,7 @@ const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('hi'); // Default to Hindi
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
-  
+
   const SLIDE_DURATION = 10000;
   const TOTAL_SLIDES = 3;
   const UPDATE_INTERVAL = 50;
@@ -98,17 +98,17 @@ const App: React.FC = () => {
   return (
     <div className={`app-container ${fontMainClass}`}>
       <audio ref={audioRef} src={data.musicFile} loop />
-      
+
       {/* Background Layer */}
       <div className="background-wrapper">
-        <img 
-          src="/traditional-bg.png" 
-          alt="Traditional Hindu Background" 
+        <img
+          src="/traditional-bg.png"
+          alt="Traditional Hindu Background"
           className="background-image"
         />
         <div className="particles">
           {sparkles.map((p) => (
-            <div 
+            <div
               key={p.id}
               className="particle"
               style={{
@@ -143,7 +143,7 @@ const App: React.FC = () => {
                 <h1 className={fontTitleClass}>{data.groomName}</h1>
                 <span className={`ampersand ${fontMainClass}`}>व</span>
                 <h1 className={fontTitleClass}>{data.brideName}</h1>
-                <h2 className="subtitle" style={{marginTop: '1.5rem'}}>{data.labels.joinUs}</h2>
+                <h2 className="subtitle" style={{ marginTop: '1.5rem' }}>{data.labels.joinUs}</h2>
               </>
             ) : (
               <>
@@ -153,28 +153,24 @@ const App: React.FC = () => {
                 <h1 className={fontTitleClass}>{data.brideName}</h1>
               </>
             )}
-            
+
             <p className="om-symbol mt-4">॥ ॐ श्री गणेशाय नमः ॥</p>
-            
+
             <p style={{ marginTop: '1.5rem', fontSize: '1.4rem', fontWeight: '500', color: 'var(--accent)' }}>
-              {data.labels.twoSouls} <span className="heart" style={{color: 'var(--primary)'}}>✦</span>
+              {data.labels.twoSouls} <span className="heart" style={{ color: 'var(--primary)' }}>✦</span>
             </p>
-            
-            <div className="progress-container">
-              <div className="progress-bar" style={{ width: `${progress}%` }} />
-            </div>
           </div>
         )}
 
         {currentSlide === 1 && (
           <div className="slide-container traditional-border" key="slide-1">
             <h2 className={`section-title ${fontTitleClass}`}>{data.labels.details}</h2>
-            
+
             <div className="details-text icon-text">
               <Calendar size={22} color="var(--primary)" />
               <span className="highlight" style={{ fontSize: '1.3rem' }}>{data.date}</span> | {data.time}
             </div>
-            
+
             <div className="details-text icon-text" style={{ marginTop: '1.5rem', alignItems: 'flex-start' }}>
               <MapPin size={26} color="var(--primary)" style={{ marginTop: '4px', flexShrink: 0 }} />
               <span style={{ textAlign: 'left', fontSize: '1.3rem' }}>{data.venue}</span>
@@ -212,23 +208,19 @@ const App: React.FC = () => {
 
         {currentSlide === 2 && (
           <div className="slide-container traditional-border flex-center" key="slide-2">
-            
-            <p className="om-symbol mb-4">॥ मंगलम भगवान विष्णु मंगलम गरुड़ध्वजः ॥<br/>॥ मंगलम पुण्डरीकाक्षः मंगलाय तनो हरिः ॥</p>
+
+            <p className="om-symbol mb-4">॥ मंगलम भगवान विष्णु मंगलम गरुड़ध्वजः ॥<br />॥ मंगलम पुण्डरीकाक्षः मंगलाय तनो हरिः ॥</p>
 
             {data.displayMessage.split('\n').map((line, idx) => (
               <div key={idx} className={idx === 0 ? `display-message ${fontDisplayClass}` : "details-text"}>
                 {line}
               </div>
             ))}
-            
+
             <div style={{ marginTop: '3rem' }}>
               <p className="details-text" style={{ fontWeight: '500', color: 'var(--primary)', fontStyle: 'italic' }}>
                 {data.labels.lookForward}
               </p>
-            </div>
-
-            <div className="progress-container">
-              <div className="progress-bar" style={{ width: `${progress}%` }} />
             </div>
           </div>
         )}
@@ -238,15 +230,20 @@ const App: React.FC = () => {
           <button className="control-btn" onClick={handlePrevSlide} aria-label="Previous Slide">
             <ChevronLeft size={28} />
           </button>
-          
+
           <button className="control-btn play-btn" onClick={togglePlay} aria-label={isPlaying ? "Pause" : "Play"}>
             {isPlaying ? <Pause size={28} /> : <Play size={28} fill="currentColor" />}
           </button>
-          
+
           <button className="control-btn" onClick={handleNextSlide} aria-label="Next Slide">
             <ChevronRight size={28} />
           </button>
         </div>
+      </div>
+
+      {/* Global Progress Bar sticking to bottom viewport */}
+      <div className="progress-container">
+        <div className="progress-bar" style={{ width: `${progress}%` }} />
       </div>
     </div>
   );

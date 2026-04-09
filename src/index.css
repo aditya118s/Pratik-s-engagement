@@ -324,13 +324,13 @@ h1 {
 
 /* Progress bar */
 .progress-container {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 6px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 0 0 10px 10px;
+  width: 100vw;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
 }
 
 .progress-bar {
@@ -392,6 +392,10 @@ h1 {
   .hosts-container { flex-direction: column; gap: 2.5rem; }
   .host-list { text-align: center; }
   h1 { font-size: 2.6rem; }
+  
+  /* On mobile push the wrapper down so the card doesn't overlap the buttons */
+  .slide-wrapper { margin-top: 80px; }
+  
   .slide-container { padding: 3rem 1.5rem; width: 95%; }
   .display-message { font-size: 2.2rem; }
 }

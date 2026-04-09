@@ -24,7 +24,7 @@ const App: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const SLIDE_DURATION = 10000;
-  const TOTAL_SLIDES = 3;
+  const TOTAL_SLIDES = 5;
   const UPDATE_INTERVAL = 50;
 
   const data: EngagementData = lang === 'hi' ? engagementDataHi : engagementDataEn;
@@ -180,29 +180,32 @@ const App: React.FC = () => {
               <Phone size={22} color="var(--primary)" />
               <span style={{ fontSize: '1.2rem' }}>{data.labels.rsvp}{data.contactNumber}</span>
             </div>
-
-            <div className="hosts-container">
-              <div className="host-column">
-                <h3 className={fontTitleClass}>{data.labels.brideFamily}</h3>
-                <ul className="host-list">
-                  {data.brideHostsList.map((host, idx) => (
-                    <li key={idx}><span className="bullet">✤</span> {host}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="host-column">
-                <h3 className={fontTitleClass}>{data.labels.groomFamily}</h3>
-                <ul className="host-list">
-                  {data.groomHostsList.map((host, idx) => (
-                    <li key={idx}><span className="bullet">✤</span> {host}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
           </div>
         )}
 
         {currentSlide === 2 && (
+          <div className="slide-container traditional-border" key="slide-2">
+            <h3 className={`section-title ${fontTitleClass}`}>{data.labels.brideFamily}</h3>
+            <ul className="host-list" style={{ marginTop: '2rem' }}>
+              {data.brideHostsList.map((host, idx) => (
+                <li key={idx}><span className="bullet">✤</span> {host}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {currentSlide === 3 && (
+          <div className="slide-container traditional-border" key="slide-3">
+            <h3 className={`section-title ${fontTitleClass}`}>{data.labels.groomFamily}</h3>
+            <ul className="host-list" style={{ marginTop: '2rem' }}>
+              {data.groomHostsList.map((host, idx) => (
+                <li key={idx}><span className="bullet">✤</span> {host}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {currentSlide === 4 && (
           <div className="slide-container traditional-border flex-center" key="slide-2">
 
             <p className="om-symbol mb-4">॥ मंगलम भगवान विष्णु मंगलम गरुड़ध्वजः ॥<br />॥ मंगलम पुण्डरीकाक्षः मंगलाय तनो हरिः ॥</p>

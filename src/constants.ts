@@ -42,10 +42,10 @@ export const engagementDataEn: EngagementData = {
   ],
   musicFile: "/bg-music.ogg",
   labels: {
-    joinUs: "ki madhurmay sagaai ki paavan vela par",
-    details: "Karyakram Sthaal",
-    rsvp: "Phone: ",
-    brideFamily: "Swagatakanshi",
+joinUs: "To celebrate the joyous engagement",
+details: "Venue",
+rsvp: "RSVP: ",
+brideFamily: "With Compliments From",
     groomFamily: "Groom's Family",
     lookForward: "We eagerly look forward to your gracious presence."
   }

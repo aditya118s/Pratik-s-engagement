@@ -210,7 +210,7 @@ const App: React.FC = () => {
 
             <div className="details-text icon-text" style={{ marginTop: '1.5rem', alignItems: 'flex-start' }}>
               <MapPin size={26} color="var(--primary)" style={{ marginTop: '4px', flexShrink: 0 }} />
-              <span style={{ textAlign: 'left', fontSize: '1.3rem' }}>{data.venue}</span>
+              <a href="https://maps.app.goo.gl/jZJ3aSxQ7RascfBs8" target="_blank" rel="noopener noreferrer" style={{ textAlign: 'left', fontSize: '1.3rem', color: 'inherit', textDecoration: 'underline', cursor: 'pointer' }}>{data.venue}</a>
             </div>
 
             <div className="details-text icon-text" style={{ marginTop: '1.5rem' }}>

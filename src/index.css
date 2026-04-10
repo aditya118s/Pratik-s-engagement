@@ -130,7 +130,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.05);
   z-index: 0.5;
 }
 
@@ -140,7 +140,7 @@ body {
   object-fit: contain;
   object-position: top center;
   opacity: 0.9;
-  filter: brightness(1) contrast(1.1) saturate(1.05);
+  filter: brightness(1.2) contrast(1.2) saturate(1.1);
   display: block;
 }
 
@@ -433,7 +433,7 @@ h1 {
     object-fit: contain;
     object-position: top center;
     opacity: 1;
-    filter: brightness(1) contrast(1.1);
+    filter: brightness(1.2) contrast(1.2) saturate(1.1);
   }
   
   .hosts-container { flex-direction: column; gap: 2.5rem; }

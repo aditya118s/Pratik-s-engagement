@@ -1,6 +1,5 @@
 interface EngagementLabels {
   joinUs: string;
-  twoSouls: string;
   details: string;
   rsvp: string;
   brideFamily: string;
@@ -26,16 +25,14 @@ export const engagementDataEn: EngagementData = {
   groomName: "Pratik",
   brideName: "Ritika",
   date: "1st May, 2026",
-  time: "6:00 PM Onwards",
+  time: "6:00 PM",
   venue: "Lawn no. 1, Kunwar Upawan, Civil Lines, Ballia",
   contactNumber: "+91 9415659717, 9799898315",
-  displayMessage: "You are cordially invited",
+  displayMessage: "Pratik and Ritika's Auspicious Engagement",
   groomHostsList: [
-    "Mr. Vijendra Pratap Singh",
+    "Mr. Vijendra Pratap Singh, Lecturer at Kunwar Singh Inter College, Ballia",
     "Mrs. Guriya Singh",
-    "Aditya Pratap Singh",
-    "Mr. Baleshwar Singh",
-    "Mrs. Sushila Singh"
+    "Aditya Pratap Singh"
   ],
   brideHostsList: [
     "Mr. Anil Kumar Singh",
@@ -45,11 +42,10 @@ export const engagementDataEn: EngagementData = {
   ],
   musicFile: "/bg-music.ogg",
   labels: {
-    joinUs: "Join us in celebrating the auspicious engagement of",
-    twoSouls: "Two souls, one destiny",
-    details: "Auspicious Event Details",
-    rsvp: "Contact: ",
-    brideFamily: "Bride's Family",
+    joinUs: "ki madhurmay sagaai ki paavan vela par",
+    details: "Karyakram Sthaal",
+    rsvp: "Phone: ",
+    brideFamily: "Swagatakanshi",
     groomFamily: "Groom's Family",
     lookForward: "We eagerly look forward to your gracious presence."
   }
@@ -59,16 +55,14 @@ export const engagementDataHi: EngagementData = {
   groomName: "प्रतीक",
   brideName: "रितिका",
   date: "1 मई, 2026",
-  time: "शाम 6:00 बजे से",
+  time: "शाम 6:00 बजे",
   venue: "लॉन नं. 1, कुंवर उपवन, सिविल लाइन्स, बलिया",
   contactNumber: "+91 9415659717, 9799898315",
-  displayMessage: "आप सपरिवार सादर आमंत्रित हैं",
+  displayMessage: "प्रतीक और रितिका की मधुर सगाई",
   groomHostsList: [
-    "श्री विजेन्द्र प्रताप सिंह",
+    "विजेन्द्र प्रताप सिंह, प्रवक्ता,  कुंवर सिंह इंटर कॉलेज",
     "श्रीमती गुड़िया सिंह",
-    "आदित्य प्रताप सिंह",
-    "श्री बालेश्वर सिंह",
-    "श्रीमती सुशीला सिंह"
+    "आदित्य प्रताप सिंह"
   ],
   brideHostsList: [
     "श्री अनिल कुमार सिंह",
@@ -78,11 +72,10 @@ export const engagementDataHi: EngagementData = {
   ],
   musicFile: "/bg-music.mp3",
   labels: {
-    joinUs: "के पावन सगाई समारोह में",
-    twoSouls: "दो आत्माओं का मंगल मिलन",
-    details: "मांगलिक कार्यक्रम विवरण",
-    rsvp: "संपर्क: ",
-    brideFamily: "वधु पक्ष",
+    joinUs: "की मधुरमय सगाई की पावन वेला पर",
+    details: "कार्यक्रम स्थल",
+    rsvp: "फोन: ",
+    brideFamily: "स्वागताकांक्षी",
     groomFamily: "वर पक्ष",
     lookForward: "हमें आपकी गरिमामयी उपस्थिति की प्रतीक्षा रहेगी।"
   }

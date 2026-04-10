@@ -25,7 +25,7 @@ const App: React.FC = () => {
   const soundRef = useRef<Howl | null>(null);
 
   const SLIDE_DURATION = 10000;
-  const TOTAL_SLIDES = 5;
+  const TOTAL_SLIDES = 3;
   const UPDATE_INTERVAL = 50;
 
   const data: EngagementData = lang === 'hi' ? engagementDataHi : engagementDataEn;
@@ -176,26 +176,25 @@ const App: React.FC = () => {
         {currentSlide === 0 && (
           <div className="slide-container traditional-border" key="slide-0">
             <p className="om-symbol mb-4">॥ ॐ श्री गणेशाय नमः ॥</p>
+            <p className="om-symbol mb-4" style={{ fontSize: '1.2rem', fontWeight: '400' }}>अचल होउ अहिवातु तुम्हारा। जब लगि गंग जमुन जल धारा॥ </p>
             
             {lang === 'hi' ? (
               <>
-                <h1 className={fontTitleClass}>{data.groomName}</h1>
-                <span className={`ampersand ${fontMainClass}`}>व</span>
-                <h1 className={fontTitleClass}>{data.brideName}</h1>
+                <h1 className={fontTitleClass} style={{ display: 'inline' }}>{data.groomName}</h1>
+                <span className={`ampersand ${fontMainClass}`} style={{ display: 'inline', margin: '0 0.5rem' }}>व</span>
+                <h1 className={fontTitleClass} style={{ display: 'inline' }}>{data.brideName}</h1>
                 <h2 className="subtitle" style={{ marginTop: '1.5rem' }}>{data.labels.joinUs}</h2>
               </>
             ) : (
               <>
+                <h1 className={fontTitleClass} style={{ display: 'inline' }}>{data.groomName}</h1>
+                <span className={`ampersand ${fontMainClass}`} style={{ display: 'inline', margin: '0 0.5rem' }}>&</span>
+                <h1 className={fontTitleClass} style={{ display: 'inline' }}>{data.brideName}</h1>
                 <h2 className="subtitle">{data.labels.joinUs}</h2>
-                <h1 className={fontTitleClass}>{data.groomName}</h1>
-                <span className={`ampersand ${fontMainClass}`}>&</span>
-                <h1 className={fontTitleClass}>{data.brideName}</h1>
               </>
             )}
 
-            <p style={{ marginTop: '1.5rem', fontSize: '1.4rem', fontWeight: '500', color: 'var(--accent)' }}>
-              {data.labels.twoSouls} <span className="heart" style={{ color: 'var(--primary)' }}>✦</span>
-            </p>
+
           </div>
         )}
 
@@ -224,7 +223,7 @@ const App: React.FC = () => {
           <div className="slide-container traditional-border" key="slide-2">
             <h3 className={`section-title ${fontTitleClass}`}>{data.labels.brideFamily}</h3>
             <ul className="host-list" style={{ marginTop: '2rem' }}>
-              {data.brideHostsList.map((host, idx) => (
+              {data.groomHostsList.map((host, idx) => (
                 <li key={idx}><span className="bullet">✤</span> {host}</li>
               ))}
             </ul>

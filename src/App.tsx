@@ -211,7 +211,9 @@ const App: React.FC = () => {
               <MapPin size={26} color="var(--primary)" style={{ marginTop: '4px', flexShrink: 0 }} />
               <a href="https://maps.app.goo.gl/jZJ3aSxQ7RascfBs8" target="_blank" rel="noopener noreferrer" style={{ textAlign: 'left', fontSize: '1.3rem', color: 'inherit', textDecoration: 'underline', cursor: 'pointer' }}>{data.venue}</a>
             </div>
-
+            <div className="details-text icon-text" style={{ marginTop: '1.5rem' }}>
+              <span style={{ fontSize: '1.2rem' }}>{data.labels.lookForward}</span>
+            </div>
             <div className="details-text icon-text" style={{ marginTop: '1.5rem' }}>
               <Phone size={22} color="var(--primary)" />
               <span style={{ fontSize: '1.2rem' }}>{data.labels.rsvp}{data.contactNumber}</span>

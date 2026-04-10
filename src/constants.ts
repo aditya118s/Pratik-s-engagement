@@ -30,8 +30,8 @@ export const engagementDataEn: EngagementData = {
   contactNumber: "+91 9415659717, 9799898315",
   displayMessage: "Pratik and Ritika's Auspicious Engagement",
   groomHostsList: [
-    "Mr. Vijendra Pratap Singh, Lecturer at Kunwar Singh Inter College, Ballia",
-    "Mrs. Guriya Singh",
+    "Vijendra Pratap Singh, Lecturer at Kunwar Singh Inter College, Ballia",
+    "Guriya Singh",
     "Aditya Pratap Singh"
   ],
   brideHostsList: [
